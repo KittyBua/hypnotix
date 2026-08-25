@@ -1424,17 +1424,7 @@ class MainWindow:
         dlg.set_title(_("About"))
         dlg.set_program_name(_("Hypnotix"))
         dlg.set_comments(_("Watch TV"))
-        try:
-            h = open("/usr/share/common-licenses/GPL", encoding="utf-8")
-            s = h.readlines()
-            gpl = ""
-            for line in s:
-                gpl += line
-            h.close()
-            dlg.set_license(gpl)
-        except Exception as e:
-            print(e)
-
+        dlg.set_license_type(Gtk.License.GPL_3_0)
         dlg.set_version("__DEB_VERSION__")
         dlg.set_icon_name("hypnotix")
         dlg.set_logo_icon_name("hypnotix")
