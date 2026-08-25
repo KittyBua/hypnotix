@@ -104,6 +104,7 @@ class MyApplication(Gtk.Application):
     # Main initialization routine
     def __init__(self, application_id, flags):
         Gtk.Application.__init__(self, application_id=application_id, flags=flags)
+        GLib.set_prgname("hypnotix")
         self.connect("activate", self.activate)
 
     def activate(self, application):
